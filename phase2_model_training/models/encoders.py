@@ -159,7 +159,7 @@ class ECGEncoder(nn.Module):
         self.pool_type = pool_type  # 참고 코드와 동일하게 현재는 사용 X ('tok' 고정)
 
         self.ln_post = norm_layer(pool_dim)
-        self.proj = nn.Parameter((pool_dim ** -0.5) * torch.randn(pool_dim, output_dim))
+        self.proj = nn.Parameter(scale * torch.randn(pool_dim, output_dim))
 
     def _pad_or_crop(self, x: torch.Tensor) -> torch.Tensor:
         """x: (B, lead_num, T). T가 seq_length와 다르면 seq_length에 맞춘다."""
