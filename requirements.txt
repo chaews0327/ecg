@@ -1,0 +1,18 @@
+# Phase 0 + Phase 1 공통
+numpy
+pandas
+scikit-learn
+wfdb
+tqdm
+torch          # 버전은 본인 CUDA 환경에 맞게 설치 권장 (pytorch.org 참고)
+
+# Phase 2 추가 (median_beat.py의 R-peak 검출에 필요)
+scipy
+
+# Phase 1에서 MERL/MELP checkpoint를 실제로 돌릴 때만 필요.
+# 각 repo를 clone한 뒤 그 repo의 요구사항을 따로 설치하는 것을 권장합니다.
+#   - MERL: git clone https://github.com/cheliu-computation/MERL-ICML2024.git
+#           (별도 requirements 없음, 위 패키지로 충분)
+#   - MELP: git clone https://github.com/HKU-MedAI/MELP.git
+#           cd MELP && pip install -r requirements.txt && pip install -e .
+#           (timm, transformers, pytorch-lightning, POT(ot), ipdb, einops 등 추가로 필요)
